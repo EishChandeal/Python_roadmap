@@ -42,3 +42,29 @@ except Exception as inst:
 
 print("\n ***************** \n")
 
+import sys
+
+try: 
+    file = open('../Files/new.txt')
+    line = file.readline()
+    l = line.strip()
+except OSError as o:
+    print(f"{o} just occured! ")
+except ValueError as v:
+    print(f"could not convert the value, {v} \t occured!")
+except Exception as e:
+    print(f"unexpected {e=} , {type(e)=}")
+    raise
+
+print("\n ***************** \n")
+
+for arg in sys.argv[1:]:
+    try:
+        f  = open(arg , "r")
+    except OSError:
+        print(f" cannot open arg: {arg}")
+    else:
+        print(arg, "has length: ", len(f.readlines()), 'lines')
+        f.close()
+
+print(sys.argv[0])
