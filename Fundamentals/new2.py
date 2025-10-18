@@ -68,3 +68,34 @@ for arg in sys.argv[1:]:
         f.close()
 
 print(sys.argv[0])
+
+print("\n ***************** \n")
+
+# BRO code's vid basically included the following:
+
+try:
+    inp = int(input("Enter a number: "))
+except ValueError:
+    print("You didn't enter the right thing")
+except Exception as e:
+    print(f"An error occured and this was it: {e}")
+else:
+    print(f"I guess the try statement worked huh!")
+finally:
+    print("**** No matter what happens I always execute ****")
+print("\n ************************  \n")
+
+# Handling multiple exceptions
+
+'''Have been using python 3.10 right now , time to upgrade for using the new stuff I guess'''
+# def f():
+#     execs =  [OSError("err 1"), NameError("err 2")]
+#     raise print("Encountered the following exceptions: ", execs)
+
+
+# try:
+#     f()
+# except RuntimeError:
+#     print("the function functioned!")
+# finally:
+#     print("I am inevitable")
